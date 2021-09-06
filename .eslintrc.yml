@@ -1,0 +1,31 @@
+extends:
+  - next/core-web-vitals
+  - 'plugin:@typescript-eslint/recommended'
+  - prettier
+plugins:
+  - import
+  - '@typescript-eslint'
+rules:
+  '@typescript-eslint/consistent-type-imports': error
+  react/react-in-jsx-scope: off
+  react/display-name: off
+  react/prop-types: off
+  import/order:
+    - error
+    - alphabetize:
+        order: asc
+      newlines-between: always
+      groups:
+        - builtin
+        - external
+        - internal
+        - parent
+        - sibling
+        - index
+      pathGroups:
+        - pattern: '{components,config,containers,hooks,stores}/**'
+          group: internal
+      pathGroupsExcludedImportTypes: []
+  import/newline-after-import:
+    - error
+    - count: 1
